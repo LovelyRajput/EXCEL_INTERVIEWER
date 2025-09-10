@@ -1,21 +1,21 @@
 // backend/server.js
 require('dotenv').config();
 const express = require('express');
-const cors = require('cors');
+// Removed `cors` here, as it's typically not needed when the backend serves the frontend (same origin)
+// If you still encounter CORS errors for other external API calls, you might re-add it with specific origins.
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const { LowSync } = require('lowdb');
 const { JSONFileSync } = require('lowdb/node');
 const { v4: uuidv4 } = require('uuid'); // For generating unique interview IDs
+const path = require('path'); // <<< ADDED: Import the path module
 
 const app = express();
-const port = 3001; // Choose a port different from React's default (3000)
+// Use process.env.PORT for deployment, fallback to 3001 for local development
+const port = process.env.PORT || 3001; 
 
+// --- lowdb Database Setup ---
 const adapter = new JSONFileSync('db.json');
-// Pass the default data directly to the LowSync constructor
-// This ensures that if db.json doesn't exist or is empty, it starts with { interviews: [] }
 const db = new LowSync(adapter, { interviews: [] });
-
-// Read the database. If it was just created or empty, db.data will now be { interviews: [] }
 db.read();
 db.write();
 
@@ -23,8 +23,7 @@ db.write();
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" }); // Specify Gemini 1.5 Pro
 
-// // --- Middleware ---
-// app.use(cors({ origin: 'https://excel-interviewer-rvlv0acbo-lovelyrajputs-projects.vercel.app/' })); // Allow cross-origin requests from your frontend
+// --- Middleware ---
 app.use(express.json()); // To parse JSON request bodies
 
 // --- Helper for Gemini Interaction ---
@@ -46,6 +45,7 @@ async function generateContent(prompt, history = []) {
 }
 
 // --- API Routes ---
+// These routes should be placed BEFORE the static file serving and catch-all route
 
 // 1. Start a New Interview
 app.post('/api/interview/start', async (req, res) => {
@@ -172,6 +172,20 @@ app.get('/api/interview/:id', (req, res) => {
     res.json(interview);
 });
 
+
+// --- Serve React Frontend Static Files (CRUCIAL MODIFICATION) ---
+// This assumes your backend folder is at the same level as your frontend folder
+// and that the 'build' output is inside the 'frontend' folder.
+// __dirname is the directory of the current script (backend/server.js)
+// '..' goes up one level to the project root (ai-excel-interviewer/)
+// 'frontend' then points to the frontend folder
+// 'build' points to the compiled React app
+const frontendBuildPath = path.join(__dirname, '..', 'frontend', 'build');
+app.use(express.static(frontendBuildPath)); // <<< ADDED: Middleware to serve static files
+
+// --- Catch-all for React Router (CRUCIAL MODIFICATION - PLACED LAST) ---
+// For any request that isn't one of your API routes, serve the React app's index.html
+// This is vital for React Router to work when refreshing sub-paths.
 app.get('*', (req, res) => {
     res.sendFile(path.join(frontendBuildPath, 'index.html'));
 });
