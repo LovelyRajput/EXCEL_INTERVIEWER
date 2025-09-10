@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import './App.css'; // We'll create this for basic styling
 
-const API_BASE_URL = 'http://localhost:3001/api'; // Your backend API
+const API_BASE_URL = 'https://excel-interviewer-rvlv0acbo-lovelyrajputs-projects.vercel.app/'; // Your backend API
 
 function App() {
   const [candidateName, setCandidateName] = useState('');

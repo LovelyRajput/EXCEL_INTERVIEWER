@@ -116,6 +116,15 @@
       "transcript": [],
       "feedback": null,
       "geminiHistory": []
+    },
+    {
+      "id": "0dfdbb34-45a8-40d1-aa91-75c807d7f3f3",
+      "candidateName": "hi",
+      "startTime": "2025-09-10T16:30:07.560Z",
+      "status": "in-progress",
+      "transcript": [],
+      "feedback": null,
+      "geminiHistory": []
     }
   ]
 }

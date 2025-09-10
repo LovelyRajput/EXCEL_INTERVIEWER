@@ -24,7 +24,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" }); // Specify Gemini 1.5 Pro
 
 // --- Middleware ---
-app.use(cors()); // Allow cross-origin requests from your frontend
+app.use(cors({ origin: 'https://excel-interviewer-rvlv0acbo-lovelyrajputs-projects.vercel.app/' })); // Allow cross-origin requests from your frontend
 app.use(express.json()); // To parse JSON request bodies
 
 // --- Helper for Gemini Interaction ---
