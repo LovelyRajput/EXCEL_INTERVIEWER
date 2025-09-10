@@ -1,0 +1,121 @@
+{
+  "interviews": [
+    {
+      "id": "e3bbaba8-7aa4-4577-862a-26e3e4146235",
+      "candidateName": "lovely",
+      "startTime": "2025-09-10T13:56:12.988Z",
+      "status": "in-progress",
+      "transcript": [],
+      "feedback": null,
+      "geminiHistory": []
+    },
+    {
+      "id": "9c2875d4-c431-4967-82bd-42bec0182d22",
+      "candidateName": "lovely",
+      "startTime": "2025-09-10T13:56:49.522Z",
+      "status": "in-progress",
+      "transcript": [],
+      "feedback": null,
+      "geminiHistory": []
+    },
+    {
+      "id": "3801f79b-c138-408e-bc42-b21fccac96cc",
+      "candidateName": "lovely",
+      "startTime": "2025-09-10T13:58:04.840Z",
+      "status": "in-progress",
+      "transcript": [],
+      "feedback": null,
+      "geminiHistory": []
+    },
+    {
+      "id": "3408664c-6909-49b3-b3df-fb2aa1adfd46",
+      "candidateName": "lovely",
+      "startTime": "2025-09-10T14:01:00.953Z",
+      "status": "in-progress",
+      "transcript": [],
+      "feedback": null,
+      "geminiHistory": []
+    },
+    {
+      "id": "dc72168e-dfb7-4d9b-9b0c-ecb7db1ea745",
+      "candidateName": "ll",
+      "startTime": "2025-09-10T14:02:35.577Z",
+      "status": "in-progress",
+      "transcript": [],
+      "feedback": null,
+      "geminiHistory": []
+    },
+    {
+      "id": "bad547b9-1051-41da-a477-e1e589c327f8",
+      "candidateName": "ll",
+      "startTime": "2025-09-10T14:04:23.476Z",
+      "status": "in-progress",
+      "transcript": [],
+      "feedback": null,
+      "geminiHistory": []
+    },
+    {
+      "id": "b1549d51-4fc1-4d4f-82c4-c647ae8e85bf",
+      "candidateName": "ll",
+      "startTime": "2025-09-10T14:04:26.938Z",
+      "status": "in-progress",
+      "transcript": [],
+      "feedback": null,
+      "geminiHistory": []
+    },
+    {
+      "id": "82bbde56-de7c-4c0a-acdb-61127e338aab",
+      "candidateName": "aa",
+      "startTime": "2025-09-10T14:04:50.211Z",
+      "status": "in-progress",
+      "transcript": [],
+      "feedback": null,
+      "geminiHistory": []
+    },
+    {
+      "id": "462ee6fd-f758-4680-8e55-7381f9a8a680",
+      "candidateName": "lo",
+      "startTime": "2025-09-10T14:08:07.532Z",
+      "status": "in-progress",
+      "transcript": [],
+      "feedback": null,
+      "geminiHistory": []
+    },
+    {
+      "id": "2c194f11-9bc2-4818-a1d8-7f385e599b36",
+      "candidateName": "j",
+      "startTime": "2025-09-10T14:09:48.582Z",
+      "status": "in-progress",
+      "transcript": [],
+      "feedback": null,
+      "geminiHistory": []
+    },
+    {
+      "id": "3d649752-d3e8-4d2f-9f82-0c963435f4b7",
+      "candidateName": "j",
+      "startTime": "2025-09-10T14:10:35.129Z",
+      "status": "in-progress",
+      "transcript": [],
+      "feedback": null,
+      "geminiHistory": []
+    },
+    {
+      "id": "48a3ea61-dfa9-4d03-b2d6-156cefcb9ae6",
+      "candidateName": "lo",
+      "startTime": "2025-09-10T14:16:34.472Z",
+      "status": "in-progress",
+      "transcript": [],
+      "feedback": null,
+      "geminiHistory": []
+    },
+    {
+      "id": "851143a0-d3d5-4f2d-9e08-31d227d1508d",
+      "candidateName": "lo",
+      "startTime": "2025-09-10T14:21:02.783Z",
+      "status": "in-progress",
+      "transcript": [],
+      "feedback": null,
+      "geminiHistory": []
+    }
+  ]
+}
