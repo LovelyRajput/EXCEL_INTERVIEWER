@@ -23,8 +23,8 @@ db.write();
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" }); // Specify Gemini 1.5 Pro
 
-// --- Middleware ---
-app.use(cors({ origin: 'https://excel-interviewer-rvlv0acbo-lovelyrajputs-projects.vercel.app/' })); // Allow cross-origin requests from your frontend
+// // --- Middleware ---
+// app.use(cors({ origin: 'https://excel-interviewer-rvlv0acbo-lovelyrajputs-projects.vercel.app/' })); // Allow cross-origin requests from your frontend
 app.use(express.json()); // To parse JSON request bodies
 
 // --- Helper for Gemini Interaction ---
@@ -170,6 +170,10 @@ app.get('/api/interview/:id', (req, res) => {
         return res.status(404).json({ error: "Interview not found." });
     }
     res.json(interview);
+});
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(frontendBuildPath, 'index.html'));
 });
 
 
