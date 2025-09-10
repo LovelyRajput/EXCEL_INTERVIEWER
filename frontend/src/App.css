@@ -1,0 +1,370 @@
+/* frontend/src/App.css */
+
+/* Define CSS Variables for easier theme management and consistency */
+:root {
+  /* Gradients for Background */
+  --gradient-bg-start: #1a1a2e; /* Dark blue-purple */
+  --gradient-bg-end: #0f0f18;   /* Even darker blue-purple */
+
+  /* Gradients for Green Action Buttons */
+  --gradient-btn-green-start: #2ecc71; /* Bright Excel Green */
+  --gradient-btn-green-end: #27ae60;   /* Slightly darker green */
+  --gradient-btn-green-hover-start: #39e383; /* Brighter green for hover */
+  --gradient-btn-green-hover-end: #2ecc71;   /* Original bright green for hover end */
+
+  /* Gradients for Blue Navigation Buttons */
+  --gradient-btn-blue-start: #3498db; /* Professional Blue */
+  --gradient-btn-blue-end: #2980b9;   /* Slightly darker blue */
+  --gradient-btn-blue-hover-start: #5dade2; /* Lighter blue for hover */
+  --gradient-btn-blue-hover-end: #3498db;   /* Original blue for hover end */
+
+  /* Base Dark Colors for UI Elements */
+  --primary-dark-bg: #1f2038; /* Main app container background */
+  --secondary-dark-bg: #272844; /* Internal panel backgrounds (start-screen, chat, etc.) */
+  --tertiary-dark-bg: #323351; /* Darker elements like AI message bubbles, input field */
+
+  /* Text Colors */
+  --text-light: #e0e0e0; /* Main text color */
+  --text-medium: #b0b0b0; /* Secondary text, e.g., loading messages */
+  --text-dark: #7f8c8d; /* Placeholder text */
+
+  /* Accent Colors */
+  --accent-green-bright: #2ecc71; /* Bright green for highlights, focus borders */
+  --accent-green-faded: rgba(46, 204, 113, 0.3); /* Faded green for shadows */
+  --border-subtle: #44445c; /* Subtle border color */
+
+  /* Error Colors */
+  --error-red: #e74c3c;
+  --error-bg: #4a2d2d;
+
+  /* Shadows */
+  --shadow-primary: rgba(0, 0, 0, 0.4);
+  --shadow-secondary: rgba(0, 0, 0, 0.2);
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font stack */
+  margin: 0;
+  padding: 0; /* Full page background */
+  background: linear-gradient(135deg, var(--gradient-bg-start) 0%, var(--gradient-bg-end) 100%); /* Subtle gradient background */
+  color: var(--text-light);
+  min-height: 100vh; /* Ensure body takes full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center content vertically */
+}
+
+.App {
+  max-width: 950px; /* Slightly wider */
+  width: 90%; /* Responsive width */
+  padding: 35px; /* More padding */
+  background-color: var(--primary-dark-bg); /* Solid dark background for the main app container */
+  border-radius: 15px; /* More rounded corners */
+  box-shadow: 0 12px 30px var(--shadow-primary); /* Deeper shadow for main container */
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* More space between sections */
+  border: 1px solid var(--border-subtle); /* Subtle border */
+}
+
+h1, h2, h3, h4 {
+  color: var(--text-light);
+  text-align: center;
+  margin-bottom: 25px; /* More space below headings */
+  font-weight: 700; /* Bolder headings */
+  letter-spacing: 0.5px; /* Subtle letter spacing */
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* More space between nav buttons */
+  margin-bottom: 25px;
+}
+
+.nav-buttons button {
+  padding: 14px 30px; /* Larger nav buttons */
+  font-size: 1.05em;
+  border: none;
+  border-radius: 8px; /* More rounded */
+  cursor: pointer;
+  background-image: linear-gradient(45deg, var(--gradient-btn-blue-start) 0%, var(--gradient-btn-blue-end) 100%); /* Blue gradient */
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease; /* Smooth transitions */
+  box-shadow: 0 4px 10px var(--shadow-secondary); /* Subtle shadow */
+  background-size: 200% 200%; /* For gradient shift animation */
+  background-position: 0% 0%;
+}
+
+.nav-buttons button:hover:not(:disabled) {
+  background-position: 100% 100%; /* Shift gradient */
+  background-image: linear-gradient(45deg, var(--gradient-btn-blue-hover-start) 0%, var(--gradient-btn-blue-hover-end) 100%);
+  transform: translateY(-3px) scale(1.02); /* Lift and slightly enlarge */
+  box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4); /* Enhanced shadow */
+}
+
+.nav-buttons button:active:not(:disabled) {
+  transform: translateY(0) scale(1); /* Press effect */
+  box-shadow: 0 2px 5px var(--shadow-secondary);
+}
+
+.nav-buttons button:disabled {
+  background: #444; /* Darker disabled */
+  color: #888;
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+  transform: none;
+}
+
+.start-screen, .feedback-display, .recruiter-dashboard, .interview-details {
+  text-align: center;
+  padding: 30px; /* More padding */
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  background-color: var(--secondary-dark-bg); /* Lighter dark for internal sections */
+  box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.2); /* Deeper inner shadow */
+}
+
+.start-screen p {
+  color: var(--text-medium);
+  margin-bottom: 30px; /* More space before input */
+  font-size: 1.1em;
+}
+
+.start-screen input,
+.chat-input input {
+  padding: 14px; /* Larger input field */
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  width: calc(100% - 200px); /* Adjusted width for buttons and padding */
+  font-size: 1.05em;
+  background-color: var(--tertiary-dark-bg); /* Darker input background */
+  color: var(--text-light);
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  caret-color: var(--accent-green-bright); /* Green cursor */
+}
+
+.start-screen input::placeholder,
+.chat-input input::placeholder {
+  color: var(--text-dark);
+}
+
+.start-screen input:focus,
+.chat-input input:focus {
+  border-color: var(--accent-green-bright); /* Bright green border on focus */
+  box-shadow: 0 0 0 3px var(--accent-green-faded); /* Green glow on focus */
+}
+
+.start-screen button,
+.chat-input button {
+  padding: 14px 25px; /* Consistent button padding */
+  background-image: linear-gradient(45deg, var(--gradient-btn-green-start) 0%, var(--gradient-btn-green-end) 100%); /* Green gradient */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.05em;
+  font-weight: 600;
+  margin-left: 15px; /* Added gap between input and button */
+  margin-top: 25px; /* Added proper gap between input and button */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
+  background-size: 200% 200%;
+  background-position: 0% 0%;
+}
+
+.start-screen button:hover:not(:disabled),
+.chat-input button:hover:not(:disabled) {
+  background-position: 100% 100%;
+  background-image: linear-gradient(45deg, var(--gradient-btn-green-hover-start) 0%, var(--gradient-btn-green-hover-end) 100%);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 15px rgba(46, 204, 113, 0.5);
+}
+.start-screen button:active:not(:disabled),
+.chat-input button:active:not(:disabled) {
+  transform: translateY(0) scale(1);
+  box-shadow: 0 2px 5px rgba(46, 204, 113, 0.2);
+}
+
+.start-screen button:disabled,
+.chat-input button:disabled {
+  background: #444;
+  color: #888;
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+  transform: none;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 650px; /* Slightly taller chat window */
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: var(--secondary-dark-bg);
+  box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.chat-window {
+  flex-grow: 1;
+  padding: 20px; /* More padding */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* More space between messages */
+  scrollbar-width: thin; /* Firefox scrollbar styling */
+  scrollbar-color: var(--accent-green-bright) var(--tertiary-dark-bg); /* Firefox scrollbar color */
+}
+
+/* Custom scrollbar for Webkit browsers (Chrome, Safari) */
+.chat-window::-webkit-scrollbar {
+  width: 8px;
+}
+.chat-window::-webkit-scrollbar-track {
+  background: var(--tertiary-dark-bg);
+  border-radius: 10px;
+}
+.chat-window::-webkit-scrollbar-thumb {
+  background-color: var(--accent-green-bright);
+  border-radius: 10px;
+  border: 2px solid var(--tertiary-dark-bg);
+}
+
+
+.message {
+  padding: 12px 18px; /* More padding */
+  border-radius: 20px; /* Even more rounded corners for chat bubbles */
+  max-width: 70%; /* Slightly narrower for better flow */
+  word-wrap: break-word;
+  line-height: 1.6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Clearer shadow for bubbles */
+}
+
+.message.ai {
+  background-color: var(--tertiary-dark-bg); /* Darker background for AI messages */
+  align-self: flex-start;
+  color: var(--text-light);
+  border-bottom-left-radius: 8px; /* Sharper corner on one side for contrast */
+}
+
+.message.candidate {
+  background-image: linear-gradient(45deg, var(--gradient-btn-green-start) 0%, var(--gradient-btn-green-end) 100%); /* Green gradient for candidate messages */
+  align-self: flex-end;
+  color: var(--candidate-message-text); /* White text on green */
+  border-bottom-right-radius: 8px; /* Sharper corner on one side for contrast */
+}
+
+.chat-input {
+  display: flex;
+  padding: 18px; /* More padding */
+  border-top: 1px solid var(--border-subtle);
+  background-color: var(--primary-dark-bg); /* Darker background for input bar */
+  gap: 10px; /* Gap between input and buttons */
+}
+
+.chat-input input {
+  flex-grow: 1;
+  margin-right: 0; /* Remove extra margin here */
+  width: auto; /* Let flexbox handle width */
+}
+
+.chat-input button {
+  white-space: nowrap;
+  margin-left: 0; /* Remove extra margin here */
+}
+
+.loading {
+  text-align: center;
+  padding: 12px;
+  font-style: italic;
+  color: var(--text-medium);
+  background-color: var(--info-bg);
+  border-radius: 8px;
+  margin: 10px auto; /* Centered with vertical margin */
+  max-width: fit-content;
+  box-shadow: 0 2px 5px var(--shadow-secondary);
+}
+
+.error {
+  color: var(--error-red);
+  background-color: var(--error-bg);
+  border: 1px solid #7d3434;
+  padding: 15px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(231, 76, 60, 0.2);
+}
+
+.feedback-display {
+  text-align: left;
+  padding: 30px;
+  background-color: var(--tertiary-dark-bg); /* Darker background for feedback */
+  border-left: 6px solid var(--accent-green-bright); /* Thicker green accent bar */
+  line-height: 1.7;
+  white-space: pre-wrap;
+  color: var(--text-light);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.feedback-display h2, .feedback-display h3 {
+  text-align: left;
+  color: var(--accent-green-bright); /* Green headings within feedback */
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+.feedback-display h2:first-child, .feedback-display h3:first-child {
+  margin-top: 0;
+}
+
+.recruiter-dashboard ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.recruiter-dashboard li {
+  background-color: var(--primary-dark-bg); /* Consistent darker background for list items */
+  margin-bottom: 12px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 3px 10px var(--shadow-secondary);
+}
+
+.recruiter-dashboard li button {
+  background-image: linear-gradient(45deg, var(--gradient-btn-blue-start) 0%, var(--gradient-btn-blue-end) 100%); /* Blue gradient */
+  padding: 10px 18px;
+  font-size: 0.95em;
+  margin-left: 15px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background-size: 200% 200%;
+  background-position: 0% 0%;
+}
+
+.recruiter-dashboard li button:hover {
+  background-position: 100% 100%;
+  background-image: linear-gradient(45deg, var(--gradient-btn-blue-hover-start) 0%, var(--gradient-btn-blue-hover-end) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+}
+
+.recruiter-dashboard li button:active {
+  transform: translateY(0);
+}
+
+.interview-details {
+  text-align: left;
+}
