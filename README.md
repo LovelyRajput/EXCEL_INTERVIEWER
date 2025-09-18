@@ -5,7 +5,7 @@ The AI Excel Interviewer is an automated, conversational system designed to asse
 ## ✨ Features
 
 *   **Structured Interview Flow:** Conducts multi-turn conversations, introducing itself, explaining the process, asking a series of progressively challenging Excel questions, and providing a conclusion.
-*   **Intelligent Answer Evaluation:** Utilizes Gemini 1.5 Pro to understand and evaluate candidate responses based on correctness, depth of knowledge, and practical application.
+*   **Intelligent Answer Evaluation:** Utilizes Gemini 1.5 Pro to understand and evaluate candidate responses based on correctness, depth of knowledge, and practical application. But for now used google/gemini-2.0-flash-exp:free from OpenRouter.
 *   **Agentic Behavior & State Management:** The AI interviewer maintains context throughout the conversation, ensuring a coherent and adaptive interview experience.
 *   **Constructive Feedback Report:** Generates a comprehensive, markdown-formatted performance summary at the end of each interview, detailing strengths, weaknesses, areas for improvement, and an overall assessment.
 *   **Candidate Interview View:** An intuitive chat-like interface for candidates to interact with the AI.
