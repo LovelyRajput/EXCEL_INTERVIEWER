@@ -127,7 +127,6 @@ The frontend is the user interface where candidates take interviews and recruite
 *   **Adaptive Interview Logic:** Implement dynamic difficulty scaling and skill-tree based questioning.
 *   **Interactive Excel Environment:** Integrate a sandbox environment for practical task evaluation.
 *   **Voice Input/Output:** Add speech-to-text and text-to-speech for an enhanced experience.
-*   **Authentication & Authorization:** Secure recruiter dashboard with user login.
-*   **Database Migration:** Move from `lowdb` to a production-grade database (e.g., PostgreSQL, MongoDB).
+*   **Database Migration:** Move from `lowdb` to a production-grade database 
 *   **Comprehensive Analytics:** Provide detailed analytics and trends for recruiters.
 *   **Multi-language Support:** Offer interviews in various languages.
