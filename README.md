@@ -45,7 +45,7 @@ Follow these steps to set up and run the AI Excel Interviewer locally on your ma
 Before you begin, ensure you have the following installed:
 
 *   **Node.js (LTS version recommended) & npm:** Download from [nodejs.org](https://nodejs.org/).
-*   **A Google Gemini 1.5 Pro API Key:**
+*   **A Google Gemini 2.0 flash free API Key:**
     1.  Go to OpenRouter.ai.
     2.  Sign in using your Google, GitHub, or email account.
     3.  Visit the API Keys page once logged in.
