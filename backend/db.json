@@ -125,6 +125,201 @@
       "transcript": [],
       "feedback": null,
       "geminiHistory": []
+    },
+    {
+      "id": "bdcbfeca-2fdd-4dc1-9f18-9aa994a11996",
+      "candidateName": "lovely",
+      "startTime": "2025-09-18T04:15:04.949Z",
+      "status": "in-progress",
+      "transcript": [],
+      "feedback": null,
+      "geminiHistory": []
+    },
+    {
+      "id": "6e54edfa-2da4-4784-9117-5a54dd34fbb2",
+      "candidateName": "lovley",
+      "startTime": "2025-09-18T04:23:54.098Z",
+      "status": "in-progress",
+      "transcript": [],
+      "feedback": null,
+      "geminiHistory": []
+    },
+    {
+      "id": "06cf3854-0fcd-410b-87a0-41074e2c7659",
+      "candidateName": "hello",
+      "startTime": "2025-09-18T04:25:46.209Z",
+      "status": "in-progress",
+      "transcript": [],
+      "feedback": null,
+      "geminiHistory": []
+    },
+    {
+      "id": "0532334e-9ae7-4960-a43e-f86dfee91bdc",
+      "candidateName": "a",
+      "startTime": "2025-09-18T04:30:16.980Z",
+      "status": "in-progress",
+      "transcript": [],
+      "feedback": null,
+      "geminiHistory": []
+    },
+    {
+      "id": "de3207cd-963e-4d7b-b11a-57142484463d",
+      "candidateName": "h",
+      "startTime": "2025-09-18T04:35:25.956Z",
+      "status": "completed",
+      "transcript": [
+        {
+          "role": "ai",
+          "text": "Okay, let's begin!\n\nHello h, welcome to this Excel skills assessment. I'm here to evaluate your Excel proficiency.\n\nMy first question is:\n\nCan you explain the difference between relative, absolute, and mixed cell references in Excel, and provide a simple example of when you might use each?\n"
+        },
+        {
+          "role": "candidate",
+          "text": "i amnot sure sorry"
+        }
+      ],
+      "feedback": null,
+      "geminiHistory": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "You are an AI Excel interviewer. Your task is to assess a candidate's Excel skills through a conversation. Start by greeting the candidate and asking your first conceptual or practical Excel question. Focus on one question at a time. Keep your questions clear and concise. Do not provide answers yet. The candidate's name is h. End the interview after 5-6 questions by greeting them properly."
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Okay, let's begin!\n\nHello h, welcome to this Excel skills assessment. I'm here to evaluate your Excel proficiency.\n\nMy first question is:\n\nCan you explain the difference between relative, absolute, and mixed cell references in Excel, and provide a simple example of when you might use each?\n"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "The candidate's previous answer was: \"i amnot sure sorry\". Based on this, please evaluate their understanding and then ask the *next* Excel-related question. If their answer was insufficient, you can ask a follow-up or a clarifying question. Keep the interview moving towards assessing various Excel skills (formulas, functions, data manipulation, pivot tables, VLOOKUP, etc.). Do not provide the answer."
+            }
+          ]
+        }
+      ],
+      "endTime": "2025-09-18T04:37:45.489Z"
+    },
+    {
+      "id": "a187db91-8982-4432-9353-d0e7a0447b68",
+      "candidateName": "lovely",
+      "startTime": "2025-09-18T04:55:02.719Z",
+      "status": "completed",
+      "transcript": [
+        {
+          "role": "ai",
+          "text": "Okay, let's begin!\n\nHello Lovely, and welcome to this Excel interview. I'm excited to learn about your skills.\n\nMy first question is: Can you explain the difference between relative, absolute, and mixed cell references in Excel, and give a scenario where you would use each?\n"
+        },
+        {
+          "role": "candidate",
+          "text": "OK so the difference between the relative absolute and mixed cell reference in excel is very simple so for the relative I will tell that in relative it only extracts the address values for absolute it makes the changes of the cell address in every where where the cell is being referred and it makes it works for both the relative and absolute"
+        }
+      ],
+      "feedback": "Okay, this is a transcript of a very weak response to a fundamental Excel question. Let's break down the feedback:\n\n**Overall Assessment: Very Weak**\n\nThe candidate demonstrates a significant lack of understanding of cell references in Excel. The explanation provided is inaccurate, confused, and lacks specific examples. This performance is a major red flag for someone claiming proficiency in Excel.  A stronger candidate would have clearly and concisely explained each reference type and provided relevant use-case scenarios.\n\n**Strengths:**\n\n*   **Willingness to Answer:** The candidate attempted to answer the question, which shows a willingness to engage.\n*   **Acknowledged Terminology:** The candidate correctly identified the terms \"relative,\" \"absolute,\" and \"mixed.\"\n\n**Weaknesses:**\n\n*   **Inaccurate Definitions:** The definitions provided are fundamentally incorrect.\n    *   **Relative:** The candidate doesn't explain the core concept of relative references (adjusting based on their relative position when copied).\n    *   **Absolute:** The description is inaccurate and confusing. `$` symbols, which are critical, are not mentioned or implied.  The concept of \"makes the changes of the cell address\" is the *opposite* of what absolute references do.\n    *   **Mixed:** The statement that it “works for both relative and absolute” is extremely vague and doesn't explain how or why you'd use it.\n*   **Lack of Clarity:** The explanation is vague, rambling, and difficult to understand.\n*   **No Examples (Critical Omission):** The most glaring weakness is the absence of practical examples. Without scenarios, the explanations are meaningless.\n*   **Poor Communication:** The response lacks structure and uses vague language like \"it works.\"\n\n**Specific Areas for Improvement:**\n\n1.  **Understanding Cell Reference Types:** The candidate needs to deeply understand the following:\n    *   **Relative References (e.g., A1):** These references change relative to the cell they are copied to. If a formula `=A1+B1` in cell C1 is copied to C2, the formula in C2 will become `=A2+B2`.\n    *   **Absolute References (e.g., $A$1):** These references remain constant no matter where the formula is copied. The `$` symbol locks either the column, the row, or both.  If a formula `=$A$1+B1` in C1 is copied to C2, the formula in C2 remains `=$A$1+B2`.\n    *   **Mixed References (e.g., $A1 or A$1):** These references lock either the column *or* the row. `=$A1+B1` copied to C2 will be `=$A2+B2`.  `=A$1+B1` copied to C2 will be `=A$1+B2`.\n\n2.  **Providing Practical Examples:** The candidate *must* learn to illustrate their explanations with examples. Here are some examples they could have provided:\n\n    *   **Relative:**  \"Imagine you are calculating the total sales for each region. If you have the sales figures for each region in columns A and B, you would use relative references like `=A1+B1` in column C to calculate the total for Region 1. When you drag (copy) the formula down to calculate the total for Region 2, the formula automatically updates to `=A2+B2`.\"\n    *   **Absolute:** \"Suppose you need to calculate a percentage of total revenue for each product. Total revenue is in cell A1. To ensure the A1 reference doesn't change when you drag the formula down, use an absolute reference: `=B1/$A$1` (B1 represents the revenue for product 1). This ensures all product revenues are divided by the total revenue in A1.\"\n    *   **Mixed:** \"Let's say you're creating a multiplication table. You have numbers 1-10 in column A and row 1. You would use mixed references to multiply the corresponding numbers. Enter the formula `=$A2*B$1 ` in cell B2, and copy it across all cells in range B2:K11. Freezing Row 1 ($1) and Column A ($A), will only change the Column Number as it spans down Column A; and likewise, only change the Row Number as it spans down Row 1. \"\n\n3.  **Communication Skills:**\n    *   Be clear, concise, and structured.\n    *   Avoid vague language. Use specific terms.\n    *   Explain the *why* and not just the *what.* (Why would you use each type?)\n\n**Constructive Advice:**\n\n*   **Study the Fundamentals:** Spend time practicing and understanding the different types of cell references. There are countless online tutorials and resources.\n*   **Practice Examples Regularly:** The best way to internalize this knowledge is through practice. Create spreadsheets and use different types of cell references in various calculations.\n*   **Think in Scenarios:** Always consider real-world examples when answering technical questions. This makes the information more concrete and demonstrates a deeper understanding.\n*   **Prepare for Common Questions:** Expect questions on common Excel functions (e.g., VLOOKUP, SUMIF, COUNTIF) and formatting.\n*   **Be Confident (But Accurate):** Even if unsure, try to articulate your understanding clearly and logically. However, *do not provide incorrect information.* If you don't know, it's better to say, \"I'm not entirely sure, but I believe it might work this way…\"\n\nIn conclusion, the candidate needs significant improvement in their understanding of Excel, particularly in fundamental concepts like cell references. Dedicated study and practice are crucial. This response, as is, would likely result in the candidate not being successful in the interview.\n",
+      "geminiHistory": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "You are an AI Excel interviewer. Your task is to assess a candidate's Excel skills through a conversation. Start by greeting the candidate and asking your first conceptual or practical Excel question. Focus on one question at a time. Keep your questions clear and concise. Do not provide answers yet. The candidate's name is lovely. End the interview after 5-6 questions by greeting them properly."
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Okay, let's begin!\n\nHello Lovely, and welcome to this Excel interview. I'm excited to learn about your skills.\n\nMy first question is: Can you explain the difference between relative, absolute, and mixed cell references in Excel, and give a scenario where you would use each?\n"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "The candidate's previous answer was: \"OK so the difference between the relative absolute and mixed cell reference in excel is very simple so for the relative I will tell that in relative it only extracts the address values for absolute it makes the changes of the cell address in every where where the cell is being referred and it makes it works for both the relative and absolute\". Based on this, please evaluate their understanding and then ask the *next* Excel-related question. If their answer was insufficient, you can ask a follow-up or a clarifying question. Keep the interview moving towards assessing various Excel skills (formulas, functions, data manipulation, pivot tables, VLOOKUP, etc.). Do not provide the answer."
+            }
+          ]
+        }
+      ],
+      "endTime": "2025-09-18T04:56:04.027Z"
+    },
+    {
+      "id": "310065a6-79ea-4f84-ad21-09dab4e1625d",
+      "candidateName": "lovley",
+      "startTime": "2025-09-18T05:04:25.294Z",
+      "status": "in-progress",
+      "transcript": [],
+      "feedback": null,
+      "geminiHistory": []
+    },
+    {
+      "id": "c9c36eb4-ca12-4ea2-9f6c-5b5122c6afc0",
+      "candidateName": "hi",
+      "startTime": "2025-09-18T05:04:52.511Z",
+      "status": "in-progress",
+      "transcript": [
+        {
+          "role": "ai",
+          "text": "Okay, let's begin.\n\nHello hi, welcome! I'm going to be assessing your Excel skills today. Are you ready to begin?\n\nGreat! My first question is:\n\n**Can you explain the difference between relative, absolute, and mixed cell references in Excel, and give an example of when you might use each?**\n"
+        }
+      ],
+      "feedback": null,
+      "geminiHistory": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "You are an AI Excel interviewer. Your task is to assess a candidate's Excel skills through a conversation. Start by greeting the candidate and asking your first conceptual or practical Excel question. Focus on one question at a time. Keep your questions clear and concise. Do not provide answers yet. The candidate's name is hi. End the interview after 5-6 questions by greeting them properly."
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Okay, let's begin.\n\nHello hi, welcome! I'm going to be assessing your Excel skills today. Are you ready to begin?\n\nGreat! My first question is:\n\n**Can you explain the difference between relative, absolute, and mixed cell references in Excel, and give an example of when you might use each?**\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0e6bcabb-5cbf-4c12-9e63-d1236a786a5c",
+      "candidateName": "a",
+      "startTime": "2025-09-18T05:06:24.572Z",
+      "status": "in-progress",
+      "transcript": [
+        {
+          "role": "ai",
+          "text": "Okay, here we go.\n\nHello a, welcome to the Excel interview. I'm excited to learn about your Excel skills today.\n\nLet's start with a conceptual question: **Can you explain the difference between a relative, absolute, and mixed cell reference in Excel, and provide a scenario where you would use each?**\n"
+        }
+      ],
+      "feedback": null,
+      "geminiHistory": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "You are an AI Excel interviewer. Your task is to assess a candidate's Excel skills through a conversation. Start by greeting the candidate and asking your first conceptual or practical Excel question. Focus on one question at a time. Keep your questions clear and concise. Do not provide answers yet. The candidate's name is a. End the interview after 5-6 questions by greeting them properly.Make sure to ask different questions each time the interview starts."
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Okay, here we go.\n\nHello a, welcome to the Excel interview. I'm excited to learn about your Excel skills today.\n\nLet's start with a conceptual question: **Can you explain the difference between a relative, absolute, and mixed cell reference in Excel, and provide a scenario where you would use each?**\n"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
