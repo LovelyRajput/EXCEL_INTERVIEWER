@@ -24,8 +24,8 @@ The AI Excel Interviewer is an automated, conversational system designed to asse
 **Backend:**
 *   **Node.js:** JavaScript runtime environment.
 *   **Express.js:** Web application framework for Node.js, used to build the REST API.
-*   **Google Gemini 1.5 Pro API:** The Large Language Model (LLM) powering the AI interviewer's intelligence.
-*   **`@google/generative-ai`:** Official Google Gemini API client library for Node.js.
+*   **google/gemini-2.0-flash-exp:free:** The Large Language Model (LLM) powering the AI interviewer's intelligence.
+*   **`OpenRouter`:**Unified API gateway to access Gemini and other LLMs..
 *   **`dotenv`:** To manage environment variables (like your API key) securely.
 *   **`cors`:** Middleware to enable Cross-Origin Resource Sharing.
 *   **`lowdb`:** A lightweight, local JSON database for simple data persistence (for MVP).
@@ -46,11 +46,15 @@ Before you begin, ensure you have the following installed:
 
 *   **Node.js (LTS version recommended) & npm:** Download from [nodejs.org](https://nodejs.org/).
 *   **A Google Gemini 1.5 Pro API Key:**
-    1.  Go to [Google AI Studio](https://aistudio.google.com/).
-    2.  Sign in with your Google account.
-    3.  Create a new project or select an existing one.
-    4.  Navigate to "Get API key" or "API key management" and generate a new API key.
-    5.  **Keep this API key secret! Never expose it in your frontend code.**
+    1.  Go to OpenRouter.ai.
+    2.  Sign in using your Google, GitHub, or email account.
+    3.  Visit the API Keys page once logged in.
+    4.  Click on "Create API Key" and copy the generated key.
+    5.  Add this key to your backend .env file like this:
+       ```bash
+       OPENROUTER_API_KEY=your_openrouter_api_key_here
+       ```
+    7.  **Keep this API key secret! Never expose it in your frontend code.**
 
 ### 1. Clone the Repository
 
@@ -75,9 +79,9 @@ The backend server handles all communication with the Google Gemini API and mana
 3.  **Create a `.env` file:**
     In the `backend` directory, create a file named `.env` and add your Gemini API key:
     ```
-    GEMINI_API_KEY=YOUR_GEMINI_API_KEY_HERE
+    OPEN_ROUTER_KEY =YOUR_OPEN_ROUTER_API_KEY_HERE
     ```
-    Replace `YOUR_GEMINI_API_KEY_HERE` with the actual API key you obtained from Google AI Studio.
+    Replace `YOUR_OPEN_ROUTER_API_KEY_HERE` with the actual API key you obtained from OPENROUTER.
 
 4.  **Start the backend server:**
     ```bash
@@ -88,7 +92,15 @@ The backend server handles all communication with the Google Gemini API and mana
     *   **Troubleshooting:**
         *   If you encounter a `429 Too Many Requests` error, your Gemini API free tier quota might be exceeded. Wait a few minutes/hours (or until the next day) and try again.
         *   If you see an "API key not valid" error, double-check your `.env` file and regenerate your API key if necessary.
-
+5. **Required Packages for OpenRouter Integration:**
+   1. axios – For making HTTP requests to OpenRouter's API:
+      ```bash
+      npm install axios
+      ```
+   2. dotenv – To load your OpenRouter API key securely from the .env file:
+      ```bash
+      npm install dotenv
+      ```
 ### 3. Frontend Setup (React.js)
 
 The frontend is the user interface where candidates take interviews and recruiters view results.
